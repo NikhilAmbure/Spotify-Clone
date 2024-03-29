@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone</title>
+    <link rel="stylesheet" href="/CSS/general.css">
+    <link rel="stylesheet" href="/CSS/header.css">
+    <link rel="stylesheet" href="/CSS/playsong.css">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <nav class="Header">
+        <div class="section-1">
+            <img src="logo.png" class="spotify-logo" alt="">
+        </div>
+        <hr>
+        <div class="new-sec-1">
+            <div class="home-icon">
+                <img src="/Icons/home.svg" alt="" class="home">
+                <p class="text1">Home</p>
+            </div>
+            <div class="search-icon">
+                <img src="/Icons/search.svg" alt="" class="search">
+                <p class="text2">Search</p>
+            </div>
+            <div class="library-icon">
+                <img src="/Icons/library.svg" alt="" class="library">
+                <p class="text3">Library</p>
+            </div>
+        </div>
+        <hr>
+        <div class="section-2">
+            <div class="playlist-icon">
+                <img src="/Icons/playlist-solid-24.png" alt="" class="playlist">
+                <p class="text4">Create Playlist</p>
+            </div>
+            <div class="liked-songs">
+                <img src="/Icons/heart-regular-24.png" alt="" class="heart">
+                <p class="text5">Liked Songs</p>
+            </div>
+        </div>
+        <hr>
+        <div class="section-3">
+            <div class="electronic-icon">
+                <p class="text6">Alan Walker</p>
+            </div>
+            <div class="soothing-tunes">
+                <p class="text7">BoysWithHuke</p>
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- Play-Song -->
+    <nav class="play-song">
+
+        <div class="template-section">
+            <img src="/Songs-Template/Red Right Hand.png" alt="" class="song-template">
+            <div class="name">
+                <p class="song-name">Red Right Hand</p>
+                <p class="singer-name">Ooyy</p>
+            </div>
+            <p class="heart-icon"> &#x2661; </p>
+        </div>
+
+        <div class="player-section">
+            <div class="song-progress-bar">
+                <div class="song-progress"></div>
+            </div>
+            <div class="song-time">0:00 / 5:00</div>
+            <button class="play-pause-button" onclick="togglePlayPause()">Play</button>
+        </div>
+
+        <div class="volume-section">
+
+        </div>
+    </nav>
+
+    <script src="/JavaScript/playsong.js"></script>
+</body>
+
+</html>
