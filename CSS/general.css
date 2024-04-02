@@ -17,3 +17,10 @@ hr {
     margin: 1px 0;
     margin-left: 20px;
 } 
+
+@media only screen and (max-width: 1000px) {
+    hr {
+        max-width: 200px;
+        margin-left: 35px;
+    }
+}

@@ -3,6 +3,8 @@ let songDuration = 300; // Duration of the song in seconds
 let currentTime = 0; // Current time of the song in seconds
 let intervalId; // Interval ID for song progress updates
 
+let likedsongsId = false;
+
 // Function to update the progress bar and song play time
 function updateProgressBar() {
     let progress = (currentTime / songDuration) * 100; // Calculate progress percentage
@@ -22,16 +24,33 @@ function formatTime(minutes, seconds) {
 
 // Function to toggle between play and pause
 function togglePlayPause() {
+    var playPauseButton = document.querySelector('.play-pause-button');
+    var playPauseImg = playPauseButton.querySelector('.play-img');
+
     if (isPlaying) {
         clearInterval(intervalId); // Stop the interval for song progress updates
         isPlaying = false; // Update flag to indicate song is paused
-        document.querySelector('.play-pause-button').textContent = 'Play'; // Change button text to 'Play'
+        playPauseImg.src = '/Icons/play.png'; // Change src to play icon
     } else {
         intervalId = setInterval(function () {
             currentTime += 1; // Increment current time by 1 second
             updateProgressBar(); // Update progress bar
         }, 1000); // Update every second
         isPlaying = true; // Update flag to indicate song is playing
-        document.querySelector('.play-pause-button').textContent = 'Pause'; // Change button text to 'Pause'
+        playPauseImg.src = '/Icons/pause.png'; // Change src to pause icon
     }
 }
+
+
+// function likedsongs() {
+//     var likedsongsec = document.querySelector('.liked-songs');
+//     var likedsongImg = likedsongsec.querySelector('.heart');
+
+//     if(likedsongsId) {
+//         likedsongImg.src = '/Icons/heart-regular-24.png';
+//         likedsongsId = false;
+//     } else {
+//         likedsongsId = true;
+//         likedsongImg.src = '/Icons/tick.png';
+//     }
+// }

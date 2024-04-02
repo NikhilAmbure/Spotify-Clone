@@ -14,7 +14,7 @@
     <!-- Sidebar -->
     <nav class="Header">
         <div class="section-1">
-            <img src="logo.png" class="spotify-logo" alt="">
+            <img src="/Icons/logo.png" class="spotify-logo" alt="">
         </div>
         <hr>
         <div class="new-sec-1">
@@ -63,7 +63,7 @@
                 <p class="song-name">Red Right Hand</p>
                 <p class="singer-name">Ooyy</p>
             </div>
-            <p class="heart-icon"> &#x2661; </p>
+            <p class="heart-icon" onclick="likedsongs();"> &#x2661; </p>
         </div>
 
         <div class="player-section">
@@ -71,7 +71,9 @@
                 <div class="song-progress"></div>
             </div>
             <div class="song-time">0:00 / 5:00</div>
-            <button class="play-pause-button" onclick="togglePlayPause()">Play</button>
+            <button class="play-pause-button" onclick="togglePlayPause()"><img src="/Icons/play.png" alt="" class="play-img"></button>
+            <button class="next-button"><img src="/Icons/next.png" alt="" class="next-img"></button>
+            <button class="prev-button"><img src="/Icons/next.png" alt="" class="prev-img"></button>
         </div>
 
         <div class="volume-section">
