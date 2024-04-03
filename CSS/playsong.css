@@ -15,7 +15,7 @@
 .template-section {
     display: flex;
     flex: 1;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     justify-content: start;
     align-items: center;
 }
@@ -58,10 +58,6 @@
     text-decoration: underline;
 }
 
-.volume-section {
-    display: flex;
-    flex: 1;
-}
 
 .heart-icon {
     color: white;
@@ -110,11 +106,12 @@
 
 
 
+/* Section - 2 */
 /* Song-progress-bar */
 .player-section {
     display: flex;
-    flex: 2;
-    border: 1px solid red;
+    flex: 5;
+    /* border: 1px solid red; */
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -195,4 +192,79 @@
 .song-time {
     font-size: 14px;
     color: white;
+}
+
+
+/* Section - 3 */
+
+.volume-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-left: -60px;
+    /* border: 1px solid red; */
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 80%;
+    height: 5px;
+    background: gray ;
+    outline: none;
+    border-radius: 10px;
+    margin-right: 15px;
+    margin-left: -10px;
+    margin-top: 30px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background-color: rgb(19, 220, 19);
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.mute-button {
+    /* background: transparent;  */
+    background: transparent;
+    background-size: cover;
+    overflow: hidden;
+    border: none;
+    border-radius: 0%;
+    cursor: pointer;
+    margin-right: 15px;
+    margin-top: 30px;
+    margin-left: -45px;
+}
+
+.mute-img {
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border-radius: 50px;
+}
+
+.volume-section span {
+    margin-left: -10px;
+    margin-top: 30px;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .slider {
+        display: none;
+    }
+
+    .mute-button {
+        margin-left: 10px;
+    }
+
+    .volume-section span {
+        display: none;
+    }
 }

@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify Clone</title>
     <link rel="stylesheet" href="/CSS/general.css">
-    <link rel="stylesheet" href="/CSS/header.css">
+    <link rel="stylesheet" href="/CSS/sidebar.css">
     <link rel="stylesheet" href="/CSS/playsong.css">
 </head>
 
 <body>
     <!-- Sidebar -->
-    <nav class="Header">
+    <nav class="sidebar">
         <div class="section-1">
-            <img src="/Icons/logo.png" class="spotify-logo" alt="">
+            <img src="/Icons/spotify.jpg" class="spotify-logo" alt="">
         </div>
         <hr>
         <div class="new-sec-1">
@@ -77,9 +77,18 @@
         </div>
 
         <div class="volume-section">
-
+            <button class="mute-button" onclick="toggleMute()"><img src="/Icons/volume.png" alt="" class="mute-img"></button>
+            <input type="range" class="slider" id="volumeSlider" min="0" max="100" value="50">
+            <span class="volume-value">50</span>
+            
         </div>
     </nav>
+
+
+    <!-- Spotify Body -->
+    <div class="spotify-flex" style="color: red; margin-left: 300px;">
+        Hey!
+    </div>
 
     <script src="/JavaScript/playsong.js"></script>
 </body>

@@ -54,3 +54,35 @@ function togglePlayPause() {
 //         likedsongImg.src = '/Icons/tick.png';
 //     }
 // }
+
+
+// Volume Slider
+
+function toggleMute() {
+    var volumeSlider = document.getElementById('volumeSlider'); // Fixed selector
+    var muteButton = document.querySelector('.mute-button');
+    var muteButtonImg = muteButton.querySelector(".mute-img");
+
+    if (volumeSlider.value > 0) {
+        volumeSlider.value = 0;
+        muteButtonImg.src = "/Icons/mute.png"; // Change image source to mute icon
+        document.querySelector(".volume-value").innerHTML = '0';
+    } else {
+        document.querySelector(".volume-value").innerHTML = '50';
+        volumeSlider.value = 50;
+        muteButtonImg.src = '/Icons/volume.png'; // Change image source to volume icon
+    }
+}
+
+
+document.getElementById("volumeSlider").addEventListener("input", function() {
+    var volume = this.value;
+    document.querySelector(".volume-value").textContent = volume; // Update volume value display
+    // adjustVolume(volume);
+});
+
+
+// function adjustVolume(volume) {
+//     // Implement logic to adjust volume in your application
+//     console.log("Volume adjusted to: " + volume);
+// }
