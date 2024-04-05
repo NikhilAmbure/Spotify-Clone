@@ -6,8 +6,9 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: gray;
+    background-color: #191414;
     height: 1000px;
+    margin-left: 290px;
 }
 
 hr {
@@ -19,6 +20,10 @@ hr {
 } 
 
 @media only screen and (max-width: 1000px) {
+    body {
+        margin-left: -70px;
+    }
+
     hr {
         max-width: 200px;
         margin-left: 35px;
