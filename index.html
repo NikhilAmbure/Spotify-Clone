@@ -20,36 +20,36 @@
         <hr>
         <div class="new-sec-1">
             <div class="home-icon">
-                <img src="/Icons/home.svg" alt="" class="home">
-                <p class="text1">Home</p>
+                <img src="/Icons/home1.jpg" alt="" class="home">
+                <p class="text1 t">Home</p>
             </div>
             <div class="search-icon">
-                <img src="/Icons/search.svg" alt="" class="search">
-                <p class="text2">Search</p>
+                <img src="/Icons/new-search.png" alt="" class="search">
+                <p class="text2 t">Search</p>
             </div>
             <div class="library-icon">
-                <img src="/Icons/library.svg" alt="" class="library">
-                <p class="text3">Library</p>
+                <img src="/Icons/library.png" alt="" class="library">
+                <p class="text3 t">Library</p>
             </div>
         </div>
         <hr>
         <div class="section-2">
             <div class="playlist-icon">
                 <img src="/Icons/playlist-solid-24.png" alt="" class="playlist">
-                <p class="text4">Create Playlist</p>
+                <p class="text4 t">Create Playlist</p>
             </div>
             <div class="liked-songs">
                 <img src="/Icons/heart-regular-24.png" alt="" class="heart">
-                <p class="text5">Liked Songs</p>
+                <p class="text5 t">Liked Songs</p>
             </div>
         </div>
         <hr>
         <div class="section-3">
             <div class="electronic-icon">
-                <p class="text6">Alan Walker</p>
+                <p class="text6 t">Alan Walker</p>
             </div>
             <div class="soothing-tunes">
-                <p class="text7">BoysWithHuke</p>
+                <p class="text7 t">BoysWithHuke</p>
             </div>
         </div>
 
@@ -72,7 +72,7 @@
                 <div class="song-progress"></div>
             </div>
             <div class="song-time">0:00 / 5:00</div>
-            <button class="play-pause-button" onclick="togglePlayPause()"><img src="/Icons/play.png" alt="" class="play-img"></button>
+            <button class="play-pause-button" onclick="togglePlayPause()"><img src="/Icons/new-play.png" alt="" class="play-img"></button>
             <button class="next-button"><img src="/Icons/next.png" alt="" class="next-img"></button>
             <button class="prev-button"><img src="/Icons/next.png" alt="" class="prev-img"></button>
         </div>
@@ -91,6 +91,7 @@
 
         <div class="body-top">
 
+            <!-- Sec-1 -->
             <div class="premium">
                 <button class="back-icon">
                     <img src="/Icons/back.png" alt="" class="back-img">
@@ -98,6 +99,7 @@
                 <button class="next-icon">
                     <img src="/Icons/next-arrow.png" alt="" class="next-img-">
                 </button>
+                <!-- <p id="scrollWord"></p> -->
                 <button class="premium-icon">
                     Explore Premium
                 </button>
@@ -112,7 +114,7 @@
                 </button>
             </div>
 
-
+            <!-- Playlist info -->
             <div class="playlist-info">
 
                 <div class="playlist-template">
@@ -139,15 +141,45 @@
                          
             </div>    
 
+            <!-- Songs -->
+            <div class="songs-list">
+                <div class="One">
+                    <div class="play-playlist">
+                        <img src="/Icons/play.png" alt="" class="play-now-img">
+                        <img src="/Icons/shuffle.png" alt="" class="shuffle-img">
+                        <img src="/Icons/download.png" alt="" class="download-img">
+                        <img src="/Icons/invite.png" alt="" class="invite-img">
+                        <img src="/Icons/options.png" alt="" class="options-img">
+                    </div>
+                </div>
+
+                <div class="songs-grid">
+                    <div class="first-column c">
+                        <p>#</p>
+                    </div>
+                    <div class="second-column c">
+                        <p>Title</p>
+                    </div>
+                    <div class="third-column c">
+                        <p>Album</p>
+                    </div>
+                    <div class="forth-column c">
+                        <p>Date Added</p>
+                    </div>
+                    <div class="fifth-column c">
+                        <p>watch</p>
+                    </div>
+                </div>
+                
+            </div>
+            
         </div>
 
        
-        <div class="songs-list">
-
-        </div>
     </div>
 
     <script src="/JavaScript/playsong.js"></script>
+    <script src="/JavaScript/General.js"></script>
 </body>
 
 </html>

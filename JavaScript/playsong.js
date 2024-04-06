@@ -30,7 +30,7 @@ function togglePlayPause() {
     if (isPlaying) {
         clearInterval(intervalId); // Stop the interval for song progress updates
         isPlaying = false; // Update flag to indicate song is paused
-        playPauseImg.src = '/Icons/play.png'; // Change src to play icon
+        playPauseImg.src = '/Icons/new-play.png'; // Change src to play icon
     } else {
         intervalId = setInterval(function () {
             currentTime += 1; // Increment current time by 1 second
