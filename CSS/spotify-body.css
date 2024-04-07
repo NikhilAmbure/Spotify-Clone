@@ -6,6 +6,7 @@
     width: 99.80%;
     /* flex-direction: column; */
     /* border: 1px solid palevioletred; */
+    overflow: hidden;
 }
 
 /* #scrollWord {
@@ -49,6 +50,7 @@
     align-items: center;
     justify-content: start;
     position: fixed;
+    z-index: 100;
 }
 
 .back-icon,.next-icon{
@@ -265,7 +267,7 @@
 .play-now-img {
     height: 50px;
     width: 50px;
-    margin-left: 11px;
+    margin-left: 25px;
     
     border-radius: 40px;
     cursor: pointer;
@@ -311,13 +313,17 @@
 
 .songs-grid {
     display: grid;
-    grid-template-columns: 50px 1fr 1fr 1fr 1fr;
-    height: 80px;
+    grid-template-columns: 30px 250px 200px 1fr 1fr;
+    height: 48px;
     margin-left: 60px;
     grid-column-gap: 100px;
     position: sticky;
     top: 50px;
-    z-index: 1;
+    /* z-index: 101; */
+    /* border: 1px solid springgreen; */
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 15px ;
 }
 
 .songs-grid::after {
@@ -332,11 +338,108 @@
     margin-left: -16px;
 }
 
-.second-column {
+.second-column,
+.song-title {
      margin-left: -90px; 
 }
 
 .c {
     color: grey;
     align-self: start;
+}
+
+.watch {
+    height: 35px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+
+.new-songs-grid {
+    display: grid;
+    grid-template-columns: 30px 250px 200px 1fr 1fr;
+    height: 55px;
+    padding-left: 60px;
+    /* margin-left: 60px; */
+    grid-column-gap: 100px;
+    position: sticky;
+    /* border: 1px solid red; */
+    /* top: 50px; */
+    z-index: 0;
+    color: white;
+    align-items: center;
+    padding-top: 10px;
+    /* visibility: hidden; */
+    font-weight: 500;
+}
+
+.new-songs-grid:hover {
+    background: #333;
+    /* background: rgba(0, 0, 0, 0.5); */
+}
+
+.song-info {
+    margin-top: -16px;
+}
+
+.song-img {
+    height: 45px;
+    width: 45px;
+    /* margin-left: -10px; */
+    /* margin-top: 0px; */
+    margin-right: 12px;
+}
+
+.song-title {
+    display: flex;
+    flex-direction: row;
+}
+
+.sing-name {
+    display: flex;
+    margin: 0;
+    font-size: 13px;
+    margin-top: -14px;  
+    cursor: pointer;
+    /* color: lightgray; */
+    color: #999999;
+}
+
+.sing-name:hover {
+    text-decoration: underline;
+}
+
+.song-album,
+.song-date,
+.song-time {
+    /* width: 200px; */
+    font-size: 14px;
+    color: #999999;
+    margin-top: -10px;
+}
+
+.song-album:hover {
+    text-decoration: underline;
+}
+
+
+/* End */
+.end-block {
+    display: flex;
+    width: 100%;
+    /* border: 1px solid red; */
+    margin-top: 50px;
+    justify-content: end;
+}
+
+.end-block span {
+    margin-right: 85px;
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+}
+
+.end-block span:hover {
+    text-decoration: underline;
 }

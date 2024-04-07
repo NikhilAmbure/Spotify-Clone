@@ -13,3 +13,16 @@ window.addEventListener("scroll", ()=>{
 });
 */
 
+/*
+function changeToPlayButton(element) {
+    var songNumber = element.querySelector('.song-number p');
+    var index = Array.from(element.parentNode.children).indexOf(element) + 1;
+    songNumber.innerHTML = '<p>&raquo;</p>';
+}
+
+function changeToNumber(element) {
+    var songNumber = element.querySelector('.song-number p');
+    var index = Array.from(element.parentNode.children).indexOf(element) + 1;
+    songNumber.textContent = index;
+}
+*/

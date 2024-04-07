@@ -14,10 +14,12 @@
 <body>
     <!-- Sidebar -->
     <nav class="sidebar">
+
         <div class="section-1">
             <img src="/Icons/spotify.jpg" class="spotify-logo" alt="">
         </div>
         <hr>
+
         <div class="new-sec-1">
             <div class="home-icon">
                 <img src="/Icons/home1.jpg" alt="" class="home">
@@ -33,6 +35,7 @@
             </div>
         </div>
         <hr>
+
         <div class="section-2">
             <div class="playlist-icon">
                 <img src="/Icons/playlist-solid-24.png" alt="" class="playlist">
@@ -44,6 +47,7 @@
             </div>
         </div>
         <hr>
+
         <div class="section-3">
             <div class="electronic-icon">
                 <p class="text6 t">Alan Walker</p>
@@ -64,27 +68,49 @@
                 <p class="song-name">Red Right Hand</p>
                 <p class="singer-name">Ooyy</p>
             </div>
-            <p class="heart-icon" onclick="likedsongs();"> &#x2661; </p>
+            <img src="/Icons/likes.png" alt="" class="liked">
         </div>
 
         <div class="player-section">
+
+            <div class="button-section">
+                <button class="prev-button">
+                    <img src="/Icons/new-back.png" alt="" class="prev-img">
+                </button>
+                <button class="play-pause-button" onclick="togglePlayPause()">
+                    <img src="/Icons/new-play.png" alt="" class="play-img">
+                </button>
+                <button class="next-button">
+                    <img src="/Icons/new-next.png" alt="" class="next-img">
+                </button>
+            </div>
+
+            <div class="song-time start">0:00</div>
             <div class="song-progress-bar">
                 <div class="song-progress"></div>
             </div>
-            <div class="song-time">0:00 / 5:00</div>
-            <button class="play-pause-button" onclick="togglePlayPause()"><img src="/Icons/new-play.png" alt="" class="play-img"></button>
-            <button class="next-button"><img src="/Icons/next.png" alt="" class="next-img"></button>
-            <button class="prev-button"><img src="/Icons/next.png" alt="" class="prev-img"></button>
+            <div class="song-time end">5:00</div>
+
         </div>
 
         <div class="volume-section">
-            <button class="mute-button" onclick="toggleMute()"><img src="/Icons/volume.png" alt="" class="mute-img"></button>
+
+            <button class="mic-button">
+                <img src="/Icons/mic.png" alt="" class="mute-img">
+            </button>
+            <button class="queue-button">
+                <img src="/Icons/queue.png" alt="" class="mute-img">
+            </button>
+            <button class="connect-button">
+                <img src="/Icons/connect-to-device.png" alt="" class="mute-img">
+            </button>
+            <button class="mute-button" onclick="toggleMute()"><img src="/Icons/volume.png" alt=""
+                    class="mute-img"></button>
             <input type="range" class="slider" id="volumeSlider" min="0" max="100" value="50">
             <span class="volume-value">50</span>
-            
+
         </div>
     </nav>
-
 
     <!-- Spotify Body -->
     <div class="spotify-flex">
@@ -93,6 +119,7 @@
 
             <!-- Sec-1 -->
             <div class="premium">
+
                 <button class="back-icon">
                     <img src="/Icons/back.png" alt="" class="back-img">
                 </button>
@@ -112,6 +139,7 @@
                 <button class="account">
                     <img src="/Icons/account.jpg" alt="" class="account-img">
                 </button>
+
             </div>
 
             <!-- Playlist info -->
@@ -120,29 +148,34 @@
                 <div class="playlist-template">
                     <img src="/Images/playlist-template.webp" alt="" class="playlist-img">
                 </div>
-    
+
                 <div class="info">
-                   <p class="p-1">Public Playlist</p>
+
+                    <p class="p-1">Public Playlist</p>
                     <p class="Head">English</p>
                     <p class="account-info">
-                        <p class="pic-block">
-                            <img src="/Icons/account.jpg" alt="" class="account-img">
-                        </p>
-                        <div class="text-info">
-                            <p class="name">
-                                <span class="ac-name">NikhilAmbure</span>
-                                <span>&bull; 2 Likes</span>
-                                <span>&bull; 10 Songs,</span>
-                                <span>1hr 10min</span>
-                            </p>
-                        </div>
+                    <p class="pic-block">
+                        <img src="/Icons/account.jpg" alt="" class="account-img">
                     </p>
+
+                    <div class="text-info">
+
+                        <p class="name">
+                            <span class="ac-name">NikhilAmbure</span>
+                            <span>&bull; 2 Likes</span>
+                            <span>&bull; 10 Songs,</span>
+                            <span>1hr 10min</span>
+                        </p>
+
+                    </div>
+
                 </div>
-                         
-            </div>    
+
+            </div>
 
             <!-- Songs -->
             <div class="songs-list">
+
                 <div class="One">
                     <div class="play-playlist">
                         <img src="/Icons/play.png" alt="" class="play-now-img">
@@ -153,29 +186,273 @@
                     </div>
                 </div>
 
-                <div class="songs-grid">
-                    <div class="first-column c">
-                        <p>#</p>
+                <!-- Songs - columns -->
+                <div class="Columns">
+
+                    <div class="songs-grid">
+                        <div class="first-column c">
+                            <p>#</p>
+                        </div>
+                        <div class="second-column c">
+                            <p>Title</p>
+                        </div>
+                        <div class="third-column c">
+                            <p>Album</p>
+                        </div>
+                        <div class="forth-column c">
+                            <p>Date Added</p>
+                        </div>
+                        <div class="fifth-column c">
+                            <img src="/Icons/watch.png" alt="" class="watch">
+                        </div>
                     </div>
-                    <div class="second-column c">
-                        <p>Title</p>
+
+                    <div class="total-songs">
+
+                        <!-- Song - 1 -->
+                        <div class="new-songs-grid">
+                            <div class="song-number ss">
+                                <p>1</p>
+                            </div>
+                            <div class="song-title ss">
+                                <img src="/Songs-Template/Red Right Hand.png" alt="" class="song-img">
+                                <div class="song-info">
+                                    <p class="t1">Red Right Hand</p>
+                                    <p class="sing-name">Nick Cave & The Bad Seeds, Flood</p>
+                                </div>
+                            </div>
+                            <div class="song-album ss">
+                                <p>Theme from Peaky Blinders</p>
+                            </div>
+                            <div class="song-date ss">
+                                <p>Apr 04, 2024</p>
+                            </div>
+                            <div class="song-time ss">
+                                <p>6:21</p>
+                            </div>
+                        </div>
+
+                        <!-- Song - 2 -->
+                        <div class="new-songs-grid">
+                            <div class="song-number ss">
+                                <p>2</p>
+                            </div>
+                            <div class="song-title ss">
+                                <img src="/Songs-Template/Arcade.png" alt="" class="song-img">
+                                <div class="song-info">
+                                    <p class="t1">Arcade</p>
+                                    <p class="sing-name">Duncan Laurence</p>
+                                </div>
+                            </div>
+                            <div class="song-album ss">
+                                <p>Arcade</p>
+                            </div>
+                            <div class="song-date ss">
+                                <p>Apr 05, 2024</p>
+                            </div>
+                            <div class="song-time ss">
+                                <p>3:04</p>
+                            </div>
+                        </div>
+
+                        <!-- Song - 3 -->
+                        <div class="new-songs-grid">
+                            <div class="song-number ss">
+                                <p>3</p>
+                            </div>
+                            <div class="song-title ss">
+                                <img src="/Songs-Template/At My Worst.png" alt="" class="song-img">
+                                <div class="song-info">
+                                    <p class="t1">At My Worst (feat. Kehlani)</p>
+                                    <p class="sing-name">Pink Sweat$, Kehlani</p>
+                                </div>
+                            </div>
+                            <div class="song-album ss">
+                                <p>At My Worst (feat. Kehlani)</p>
+                            </div>
+                            <div class="song-date ss">
+                                <p>Apr 05, 2024</p>
+                            </div>
+                            <div class="song-time ss">
+                                <p>2:49</p>
+                            </div>
+                        </div>
+
+                        <!-- Song - 4 -->
+                        <div class="new-songs-grid">
+                            <div class="song-number ss">
+                                <p>4</p>
+                            </div>
+                            <div class="song-title ss">
+                                <img src="/Songs-Template/Happier.png" alt="" class="song-img">
+                                <div class="song-info">
+                                    <p class="t1">Happier</p>
+                                    <p class="sing-name">Marshmello, Bastille</p>
+                                </div>
+                            </div>
+                            <div class="song-album ss">
+                                <p>Happier</p>
+                            </div>
+                            <div class="song-date ss">
+                                <p>Apr 06, 2024</p>
+                            </div>
+                            <div class="song-time ss">
+                                <p>3:34</p>
+                            </div>
+                        </div>
+
+                        <!-- Song - 5 -->
+                        <div class="new-songs-grid">
+                            <div class="song-number ss">
+                                <p>5</p>
+                            </div>
+                            <div class="song-title ss">
+                                <img src="/Songs-Template/I don't Care.png" alt="" class="song-img">
+                                <div class="song-info">
+                                    <p class="t1">I Don't Care (with Justin Beiber)</p>
+                                    <p class="sing-name">Ed Sheeran & Justin Bieber</p>
+                                </div>
+                            </div>
+                            <div class="song-album ss">
+                                <p>No.6 Collaborations Project</p>
+                            </div>
+                            <div class="song-date ss">
+                                <p>Apr 06, 2024</p>
+                            </div>
+                            <div class="song-time ss">
+                                <p>3:40</p>
+                            </div>
+                        </div>
+
+                        <!-- Song - 6 -->
+                        <div class="new-songs-grid">
+                            <div class="song-number ss">
+                                <p>6</p>
+                            </div>
+                            <div class="song-title ss">
+                                <img src="/Songs-Template/I'm an Albatraoz.png" alt="" class="song-img">
+                                <div class="song-info">
+                                    <p class="t1">I'm an Albatraoz</p>
+                                    <p class="sing-name">AronChupa, Little Sis Nora</p>
+                                </div>
+                            </div>
+                            <div class="song-album ss">
+                                <p>I'm an Albatraoz</p>
+                            </div>
+                            <div class="song-date ss">
+                                <p>Apr 06, 2024</p>
+                            </div>
+                            <div class="song-time ss">
+                                <p>2:47</p>
+                            </div>
+                        </div>
+
+                        <!-- Song - 7 -->
+                        <div class="new-songs-grid">
+                            <div class="song-number ss">
+                                <p>7</p>
+                            </div>
+                            <div class="song-title ss">
+                                <img src="/Songs-Template/Montero.png" alt="" class="song-img">
+                                <div class="song-info">
+                                    <p class="t1">MONTERO (Call me by your name)</p>
+                                    <p class="sing-name">Lil Nas X</p>
+                                </div>
+                            </div>
+                            <div class="song-album ss">
+                                <p>MONTERO</p>
+                            </div>
+                            <div class="song-date ss">
+                                <p>Apr 07, 2024</p>
+                            </div>
+                            <div class="song-time ss">
+                                <p>2:18</p>
+                            </div>
+                        </div>
+
+                        <!-- Song - 8 -->
+                        <div class="new-songs-grid">
+                            <div class="song-number ss">
+                                <p>8</p>
+                            </div>
+                            <div class="song-title ss">
+                                <img src="/Songs-Template/Old Town Road.png" alt="" class="song-img">
+                                <div class="song-info">
+                                    <p class="t1">Old Town Road</p>
+                                    <p class="sing-name">Lil Nas X</p>
+                                </div>
+                            </div>
+                            <div class="song-album ss">
+                                <p>7 EP</p>
+                            </div>
+                            <div class="song-date ss">
+                                <p>Apr 07, 2024</p>
+                            </div>
+                            <div class="song-time ss">
+                                <p>1:53</p>
+                            </div>
+                        </div>
+
+                        <!-- Song - 9 -->
+                        <div class="new-songs-grid">
+                            <div class="song-number ss">
+                                <p>9</p>
+                            </div>
+                            <div class="song-title ss">
+                                <img src="/Songs-Template/This-is-what-you-came-for.png" alt="" class="song-img">
+                                <div class="song-info">
+                                    <p class="t1">This Is what You Came For</p>
+                                    <p class="sing-name">Calvin Harris, Rihanna</p>
+                                </div>
+                            </div>
+                            <div class="song-album ss">
+                                <p>This Is What You Came For</p>
+                            </div>
+                            <div class="song-date ss">
+                                <p>Apr 08, 2024</p>
+                            </div>
+                            <div class="song-time ss">
+                                <p>3:42</p>
+                            </div>
+                        </div>
+
+                        <!-- Song - 10 -->
+                        <div class="new-songs-grid">
+                            <div class="song-number ss">
+                                <p>10</p>
+                            </div>
+                            <div class="song-title ss">
+                                <img src="/Songs-Template/Treat You Better.png" alt="" class="song-img">
+                                <div class="song-info">
+                                    <p class="t1">Treat You Better</p>
+                                    <p class="sing-name">Shawn Mendes</p>
+                                </div>
+                            </div>
+                            <div class="song-album ss">
+                                <p>IIIuminate</p>
+                            </div>
+                            <div class="song-date ss">
+                                <p>Apr 09, 2024</p>
+                            </div>
+                            <div class="song-time ss">
+                                <p>3:08</p>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="third-column c">
-                        <p>Album</p>
+
+                    <!-- End -->
+                    <div class="end-block">
+                        <span style="color: white; ">Find More</span>
                     </div>
-                    <div class="forth-column c">
-                        <p>Date Added</p>
-                    </div>
-                    <div class="fifth-column c">
-                        <p>watch</p>
-                    </div>
+
                 </div>
-                
+
             </div>
-            
+
         </div>
 
-       
+
     </div>
 
     <script src="/JavaScript/playsong.js"></script>

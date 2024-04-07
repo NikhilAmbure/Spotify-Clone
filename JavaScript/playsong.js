@@ -14,7 +14,7 @@ function updateProgressBar() {
     let currentSeconds = currentTime % 60; // Calculate current seconds
     let durationMinutes = Math.floor(songDuration / 60); // Calculate duration minutes
     let durationSeconds = songDuration % 60; // Calculate duration seconds
-    document.querySelector('.song-time').textContent = formatTime(currentMinutes, currentSeconds) + ' / ' + formatTime(durationMinutes, durationSeconds); // Update song play time display
+    document.querySelector('.song-time').textContent = formatTime(currentMinutes, currentSeconds); // Update song play time display
 }
 
 // Function to format time as mm:ss
@@ -77,7 +77,8 @@ function toggleMute() {
 
 document.getElementById("volumeSlider").addEventListener("input", function() {
     var volume = this.value;
-    document.querySelector(".volume-value").textContent = volume; // Update volume value display
+    this.style.background = 'linear-gradient(to right, #FFFFFF 0%, #FFFFFF ' + volume + '%, #d3d3d3 ' + volume + '%, #d3d3d3 100%)';
+    // document.querySelector(".volume-value").textContent = volume; // Update volume value display
     // adjustVolume(volume);
 });
 
