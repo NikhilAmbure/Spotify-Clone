@@ -62,15 +62,19 @@ function toggleMute() {
     var volumeSlider = document.getElementById('volumeSlider'); // Fixed selector
     var muteButton = document.querySelector('.mute-button');
     var muteButtonImg = muteButton.querySelector(".mute-img");
+    // var tooltipBlock = document.querySelector('.tooltip');
+    // var tooltipValue = tooltipBlock.querySelector("js-tooltip");
 
     if (volumeSlider.value > 0) {
         volumeSlider.value = 0;
         muteButtonImg.src = "/Icons/mute.png"; // Change image source to mute icon
         document.querySelector(".volume-value").innerHTML = '0';
+        document.querySelector('.js-tooltip').innerHTML = 'Unmute';
     } else {
         document.querySelector(".volume-value").innerHTML = '50';
         volumeSlider.value = 50;
         muteButtonImg.src = '/Icons/volume.png'; // Change image source to volume icon
+        document.querySelector('.js-tooltip').innerHTML = 'Mute';
     }
 }
 

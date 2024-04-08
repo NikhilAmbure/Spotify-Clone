@@ -1,9 +1,10 @@
 .play-song {
     display: flex;
     flex-direction: row;
-    height: 100px;
+    height: 90px;
     left: 0;
-    background-color: rgb(26, 25, 25);
+    /* background-color: rgb(26, 25, 25); */
+    background-color: black;
     bottom: 0;
     position: fixed;
     width: 100%;
@@ -15,7 +16,8 @@
 
 .template-section {
     display: flex;
-    flex: 1;
+    /* flex: 1; */
+    width: 300px;
     /* border: 1px solid red; */
     justify-content: start;
     align-items: center;
@@ -59,15 +61,21 @@
     text-decoration: underline;
 }
 
+.liked-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 .liked {
     height: 30px;
     width: 30px;
-    margin-left: -240px;
+    margin-left: -50px   ;
+    margin-top: 10px;
     /* margin-top: 14px; */
-    /* cursor: pointer; */
+    cursor: pointer;
 }
-
-
 
 
 
@@ -151,12 +159,14 @@
 }
 
 .end {
+    color: white;
+    font-size: 14px;
     margin-right: -660px;
     /* position: absolute; */
-    position: relative;
+    position: absolute;
     /* margin-top: -20px; */
     margin-left: 10px;
-    /* margin-bottom: 10px  ; */
+    margin-bottom: -28px  ;
     /* border: 1px solid red; */
     /* margin-bottom: 10px; */
 }
@@ -170,7 +180,7 @@
 }
 
 .play-pause-button {
-    /* margin-top: -90px;       */
+    /* margin-top: -90px;*/
     margin-bottom: 1px;
     background: transparent;
     background-size: cover;
@@ -178,10 +188,14 @@
     overflow: hidden;
     border: none;
     cursor: pointer;
-    margin-right: 10px;
-    margin-left: 10px;
+    margin-right: 15px;
+    margin-left: 15px;
     /* border: 1px solid red; */
 }
+
+/* .play-pause-button:hover {
+    /* height: 40px; */
+    /* width: 40px; */
 
 .play-img {
     height: 35px;
@@ -189,6 +203,20 @@
     /* background-color: white; */
     border-radius: 50px;
 }
+
+/* .play-img:hover {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    /* margin-right: 10px; */
+    /* margin-left: 10px; */
+/* } */
+
+/* .play-img:hover {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+} */
 
 .next-button {
     border: 1px solid red;
@@ -311,6 +339,28 @@
 
 .mic {
     margin-right: -2px;
+}
+
+.tooltiptext{
+    font-weight: bold;
+    position: absolute;
+    background-color: #333;
+    color: white;
+    padding: 6px 9px;
+    border-radius: 2px;
+    font-size: 13px;
+    bottom: 75px;
+    margin-left: -8px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.30s;
+    pointer-events: none; /*when mouse goes to tooltip doesnt hover */
+    white-space: nowrap;
+    font-family: roboto, arial;
+}
+
+.tooltip:hover .tooltiptext {
+    opacity: 1;     
 }
 
 
