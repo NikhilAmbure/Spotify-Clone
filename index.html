@@ -65,8 +65,8 @@
     <nav class="play-song">
 
         <div class="template-section">
-            <img src="/Songs-Template/Red Right Hand.png" alt="" class="song-template">
-            <div class="name">
+            <img src="/Songs-Template/1.png" alt="" class="song-template">
+            <div class="name" id="title">
                 <p class="song-name">Red Right Hand</p>
                 <p class="singer-name">Ooyy</p>
             </div>
@@ -83,7 +83,7 @@
                 <button class="prev-button">
                     <img src="/Icons/new-back.png" alt="" class="prev-img">
                 </button>
-                <button class="play-pause-button" onclick="togglePlayPause()">
+                <button class="play-pause-button" onclick="togglePlayPause()" id="masterPlay">
                     <img src="/Icons/new-play.png" alt="" class="play-img">
                 </button>
                 <button class="next-button">
@@ -92,7 +92,7 @@
             </div>
 
             <div class="song-time start">0:00</div>
-            <div class="song-progress-bar">
+            <div class="song-progress-bar" id="progress-for-songs-bar">
                 <div class="song-progress"></div>
             </div>
             <div class="end">5:00</div>
@@ -237,12 +237,12 @@
                     <div class="total-songs">
 
                         <!-- Song - 1 -->
-                        <div class="new-songs-grid">
-                            <div class="song-number ss">
+                        <div class="new-songs-grid" id="1">
+                            <div class="song-number ss" id="1">
                                 <p>1</p>
                             </div>
                             <div class="song-title ss">
-                                <img src="/Songs-Template/Red Right Hand.png" alt="" class="song-img">
+                                <img src="/Songs-Template/1.png" alt="" class="song-img" id="1">
                                 <div class="song-info">
                                     <p class="t1">Red Right Hand</p>
                                     <p class="sing-name">Nick Cave & The Bad Seeds, Flood</p>
@@ -260,12 +260,12 @@
                         </div>
 
                         <!-- Song - 2 -->
-                        <div class="new-songs-grid">
-                            <div class="song-number ss">
+                        <div class="new-songs-grid" id="2">
+                            <div class="song-number ss" id="2">
                                 <p>2</p>
                             </div>
                             <div class="song-title ss">
-                                <img src="/Songs-Template/Arcade.png" alt="" class="song-img">
+                                <img src="/Songs-Template/2.png" alt="" class="song-img" id="2">
                                 <div class="song-info">
                                     <p class="t1">Arcade</p>
                                     <p class="sing-name">Duncan Laurence</p>
@@ -283,12 +283,12 @@
                         </div>
 
                         <!-- Song - 3 -->
-                        <div class="new-songs-grid">
-                            <div class="song-number ss">
+                        <div class="new-songs-grid" id="3">
+                            <div class="song-number ss" id="3">
                                 <p>3</p>
                             </div>
                             <div class="song-title ss">
-                                <img src="/Songs-Template/At My Worst.png" alt="" class="song-img">
+                                <img src="/Songs-Template/3.png" alt="" class="song-img" id="3">
                                 <div class="song-info">
                                     <p class="t1">At My Worst (feat. Kehlani)</p>
                                     <p class="sing-name">Pink Sweat$, Kehlani</p>
@@ -306,12 +306,12 @@
                         </div>
 
                         <!-- Song - 4 -->
-                        <div class="new-songs-grid">
-                            <div class="song-number ss">
+                        <div class="new-songs-grid" id="4">
+                            <div class="song-number ss" id="4">
                                 <p>4</p>
                             </div>
                             <div class="song-title ss">
-                                <img src="/Songs-Template/Happier.png" alt="" class="song-img">
+                                <img src="/Songs-Template/4.png" alt="" class="song-img" id="4">
                                 <div class="song-info">
                                     <p class="t1">Happier</p>
                                     <p class="sing-name">Marshmello, Bastille</p>
@@ -329,12 +329,12 @@
                         </div>
 
                         <!-- Song - 5 -->
-                        <div class="new-songs-grid">
-                            <div class="song-number ss">
+                        <div class="new-songs-grid" id="5">
+                            <div class="song-number ss" id="5">
                                 <p>5</p>
                             </div>
                             <div class="song-title ss">
-                                <img src="/Songs-Template/I don't Care.png" alt="" class="song-img">
+                                <img src="/Songs-Template/5.png" alt="" class="song-img" id="5">
                                 <div class="song-info">
                                     <p class="t1">I Don't Care (with Justin Beiber)</p>
                                     <p class="sing-name">Ed Sheeran & Justin Bieber</p>
@@ -352,12 +352,12 @@
                         </div>
 
                         <!-- Song - 6 -->
-                        <div class="new-songs-grid">
-                            <div class="song-number ss">
+                        <div class="new-songs-grid" id="6">
+                            <div class="song-number ss" id="6">
                                 <p>6</p>
                             </div>
                             <div class="song-title ss">
-                                <img src="/Songs-Template/I'm an Albatraoz.png" alt="" class="song-img">
+                                <img src="/Songs-Template/6.png" alt="" class="song-img" id="6">
                                 <div class="song-info">
                                     <p class="t1">I'm an Albatraoz</p>
                                     <p class="sing-name">AronChupa, Little Sis Nora</p>
@@ -375,12 +375,12 @@
                         </div>
 
                         <!-- Song - 7 -->
-                        <div class="new-songs-grid">
-                            <div class="song-number ss">
+                        <div class="new-songs-grid" id="7">
+                            <div class="song-number ss" id="7">
                                 <p>7</p>
                             </div>
                             <div class="song-title ss">
-                                <img src="/Songs-Template/Montero.png" alt="" class="song-img">
+                                <img src="/Songs-Template/7.png" alt="" class="song-img" id="7">
                                 <div class="song-info">
                                     <p class="t1">MONTERO (Call me by your name)</p>
                                     <p class="sing-name">Lil Nas X</p>
@@ -398,12 +398,12 @@
                         </div>
 
                         <!-- Song - 8 -->
-                        <div class="new-songs-grid">
-                            <div class="song-number ss">
+                        <div class="new-songs-grid" id="8">
+                            <div class="song-number ss" id="8">
                                 <p>8</p>
                             </div>
                             <div class="song-title ss">
-                                <img src="/Songs-Template/Old Town Road.png" alt="" class="song-img">
+                                <img src="/Songs-Template/8.png" alt="" class="song-img" id="8">
                                 <div class="song-info">
                                     <p class="t1">Old Town Road</p>
                                     <p class="sing-name">Lil Nas X</p>
@@ -421,12 +421,12 @@
                         </div>
 
                         <!-- Song - 9 -->
-                        <div class="new-songs-grid">
-                            <div class="song-number ss">
+                        <div class="new-songs-grid" id="9">
+                            <div class="song-number ss" id="9">
                                 <p>9</p>
                             </div>
                             <div class="song-title ss">
-                                <img src="/Songs-Template/This-is-what-you-came-for.png" alt="" class="song-img">
+                                <img src="/Songs-Template/9.png" alt="" class="song-img" id="9">
                                 <div class="song-info">
                                     <p class="t1">This Is what You Came For</p>
                                     <p class="sing-name">Calvin Harris, Rihanna</p>
@@ -444,12 +444,12 @@
                         </div>
 
                         <!-- Song - 10 -->
-                        <div class="new-songs-grid">
-                            <div class="song-number ss">
+                        <div class="new-songs-grid" id="10">
+                            <div class="song-number ss" id="10">
                                 <p>10</p>
                             </div>
-                            <div class="song-title ss">
-                                <img src="/Songs-Template/Treat You Better.png" alt="" class="song-img">
+                            <div class="song-title ss" id="">
+                                <img src="/Songs-Template/10.png" alt="" class="song-img" id="10" >
                                 <div class="song-info">
                                     <p class="t1">Treat You Better</p>
                                     <p class="sing-name">Shawn Mendes</p>

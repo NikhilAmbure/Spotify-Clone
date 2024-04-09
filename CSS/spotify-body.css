@@ -401,7 +401,7 @@
 .new-songs-grid {
     display: grid;
     grid-template-columns: 30px 250px 200px 1fr 1fr;
-    height: 55px;
+    height: 45px;
     padding-left: 60px;
     /* margin-left: 60px; */
     grid-column-gap: 100px;
@@ -422,7 +422,8 @@
 }
 
 .song-info {
-    margin-top: -16px;
+    font-weight: 480;
+    margin-top: -25px;
 }
 
 .song-img {
@@ -431,6 +432,7 @@
     /* margin-left: -10px; */
     /* margin-top: 0px; */
     margin-right: 12px;
+    margin-top: -12px;
 }
 
 .song-title {
@@ -438,11 +440,16 @@
     flex-direction: row;
 }
 
+.t1 {
+    font-weight: 500;
+    font-size: 15px;
+}
+
 .sing-name {
     display: flex;
     margin: 0;
-    font-size: 13px;
-    margin-top: -14px;  
+    font-size: 10px;
+    margin-top: -12px;  
     cursor: pointer;
     /* color: lightgray; */
     color: #999999;
@@ -463,6 +470,11 @@
 
 .song-album:hover {
     text-decoration: underline;
+}
+
+.song-number {
+    margin-top: -12px;
+    /* vertical-align: middle; */
 }
 
 

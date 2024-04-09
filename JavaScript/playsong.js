@@ -31,6 +31,7 @@ function togglePlayPause() {
         clearInterval(intervalId); // Stop the interval for song progress updates
         isPlaying = false; // Update flag to indicate song is paused
         playPauseImg.src = '/Icons/new-play.png'; // Change src to play icon
+        // music.pause();
     } else {
         intervalId = setInterval(function () {
             currentTime += 1; // Increment current time by 1 second
@@ -38,6 +39,7 @@ function togglePlayPause() {
         }, 1000); // Update every second
         isPlaying = true; // Update flag to indicate song is playing
         playPauseImg.src = '/Icons/pause.png'; // Change src to pause icon
+        // music.play();
     }
 }
 
@@ -91,3 +93,144 @@ document.getElementById("volumeSlider").addEventListener("input", function() {
 //     // Implement logic to adjust volume in your application
 //     console.log("Volume adjusted to: " + volume);
 // }
+
+
+
+
+// For Audio
+const music = new Audio('Audio Files/Arcade.mp3');
+// music.play();
+const songs = [
+    {
+        id: '1',
+        songName: `<p class="t1">Red Right Hand</p>
+        <p class="sing-name">Nick Cave & The Bad Seeds, Flood</p>`,
+        template: 'Songs-Template/1.png',
+        songTime: '6:21',
+    },
+    {
+        id: '2',
+        songName: `<p class="t1">Arcade</p>
+        <p class="sing-name">Duncan Laurence</p>`,
+        template: 'Songs-Template/2.png',
+        songTime: '3:04',
+    },
+    {
+        id: '3',
+        songName: `<p class="t1">At My Worst (feat. Kehlani)</p>
+        <p class="sing-name">Pink Sweat$, Kehlani</p>`,
+        template: 'Songs-Template/3.png',
+        songTime: '2:49',
+    },
+    {
+        id: '4',
+        songName: `<p class="t1">Happier</p>
+        <p class="sing-name">Marshmello, Bastille</p>`,
+        template: 'Songs-Template/4.png',
+        songTime: '3:34',
+    },
+    {
+        id: '5',
+        songName: `<p class="t1">I Don't Care (with Justin Beiber)</p>
+        <p class="sing-name">Ed Sheeran & Justin Bieber</p>`,
+        template: '/Songs-Template/5.png',
+        songTime: '3:40',
+    },
+    {
+        id: '6',
+        songName: `<p class="t1">I'm an Albatraoz</p>
+        <p class="sing-name">AronChupa, Little Sis Nora</p>`,
+        template: '/Songs-Template/6.png',
+        songTime: '2:47',
+    },
+    {
+        id: '7',
+        songName: `<p class="t1">MONTERO (Call me by your name)</p>
+        <p class="sing-name">Lil Nas X</p>`,
+        template: '/Songs-Template/7.png',
+        songTime: '2:18',
+    },
+    {
+        id: '8',
+        songName: `<p class="t1">Old Town Road</p>
+        <p class="sing-name">Lil Nas X</p>`,
+        template: '/Songs-Template/8.png',
+        songTime: '1:53',
+    },
+    {
+        id: '9',
+        songName: `<p class="t1">This Is what You Came For</p>
+        <p class="sing-name">Calvin Harris, Rihanna</p>`,
+        template: '/Songs-Template/9.png',
+        songTime: '3:42',
+    },
+    {
+        id: '10',
+        songName: `<p class="t1">Treat You Better</p>
+        <p class="sing-name">Shawn Mendes</p>`,
+        template: '/Songs-Template/10.png',
+        songTime: '3:08',
+    }
+];
+
+Array.from(document.getElementsByClassName('new-songs-grid')).forEach((e, i) => {
+    e.getElementsByTagName('img')[0].src = songs[i].template;
+    e.getElementsByClassName('song-info')[0].innerHTML = songs[i].songName;
+});
+
+
+
+// To play the song when click on the button
+let masterPlay = document.getElementById('masterPlay');
+
+masterPlay.addEventListener('click', ()=> {
+    if (music.paused || music.currentTime <= 0){
+        music.play();
+
+    } else {
+        music.pause();
+    }
+});
+
+
+
+let index = 0;
+let template_play = document.querySelector('.template-section img');
+let title_play = document.querySelector('.name');
+// let background_change = document.querySelector('.songs-grid');
+
+Array.from(document.getElementsByClassName('song-img')).forEach((e)=>{
+    e.addEventListener('click', (el)=> {
+        index = el.target.id;
+        // console.log(index);
+        music.src = `Audio Files/${index}.mp3`;
+        template_play.src = `Songs-template/${index}.png`;
+        togglePlayPause();
+        music.play();
+
+        let songTitles = songs.filter((ele) => {
+            return ele.id == index;
+        });
+
+        songTitles.forEach(elem => {
+            let { songName } = elem;
+            // title_play.innerHTML = songName;
+            // template_play.src = template;
+        });
+
+    // Array.from(document.querySelector('.song-info p'))[index].style.color = 'green';
+
+    })
+});
+
+
+
+
+
+
+
+
+
+
+
+
