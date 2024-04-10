@@ -34,16 +34,17 @@
     /* border: 1px solid red; */
     /* margin-left: -90px; */
     margin-left: 20px;
-    height: 45px;
+    height: 50px;
     cursor: pointer;
 }
 
 .song-name {
-    margin-top: 5px;
+    margin-top: 11px;
     font-weight: 500;
     margin-left: 10px;
     color: white;
-    font-size: 13px;
+    width: 210px;
+    font-size: 14px;
     /* letter-spacing: 1px; */
     cursor: pointer;
 }
@@ -53,7 +54,7 @@
 }
 
 .singer-name {
-    font-size: 10px;
+    font-size: 12px;
     margin-top: -11px;
     margin-left: 10px;
     color: white;
@@ -74,7 +75,7 @@
 .liked {
     height: 30px;
     width: 30px;
-    margin-left: -50px   ;
+    margin-left: -35px;
     margin-top: 10px;
     /* margin-top: 14px; */
     cursor: pointer;
@@ -202,6 +203,8 @@
     width: 35px;
     /* background-color: white; */
     border-radius: 50px;
+    border: none;
+    outline: none;
 }
 
 /* .play-img:hover {

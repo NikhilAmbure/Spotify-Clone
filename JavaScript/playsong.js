@@ -1,3 +1,4 @@
+// First : UpdateProgressBar, FormatTime (0:00)
 let isPlaying = false; // Flag to track if the song is currently playing
 let songDuration = 300; // Duration of the song in seconds
 let currentTime = 0; // Current time of the song in seconds
@@ -22,6 +23,9 @@ function formatTime(minutes, seconds) {
     return minutes + ':' + (seconds < 10 ? '0' : '') + seconds; // Add leading zero if seconds < 10
 }
 
+
+
+// Second : togglePlayPause, adjustvolume of music
 // Function to toggle between play and pause
 function togglePlayPause() {
     var playPauseButton = document.querySelector('.play-pause-button');
@@ -43,23 +47,14 @@ function togglePlayPause() {
     }
 }
 
-
-// function likedsongs() {
-//     var likedsongsec = document.querySelector('.liked-songs');
-//     var likedsongImg = likedsongsec.querySelector('.heart');
-
-//     if(likedsongsId) {
-//         likedsongImg.src = '/Icons/heart-regular-24.png';
-//         likedsongsId = false;
-//     } else {
-//         likedsongsId = true;
-//         likedsongImg.src = '/Icons/tick.png';
-//     }
-// }
+// Adjusts the music-volume
+function adjustVolume(volume) {
+    music.volume = volume/100;
+}
 
 
+// Third : toggleMute, volume Slider
 // Volume Slider
-
 function toggleMute() {
     var volumeSlider = document.getElementById('volumeSlider'); // Fixed selector
     var muteButton = document.querySelector('.mute-button');
@@ -72,102 +67,96 @@ function toggleMute() {
         muteButtonImg.src = "/Icons/mute.png"; // Change image source to mute icon
         document.querySelector(".volume-value").innerHTML = '0';
         document.querySelector('.js-tooltip').innerHTML = 'Unmute';
+        music.volume = 0;
     } else {
         document.querySelector(".volume-value").innerHTML = '50';
         volumeSlider.value = 50;
         muteButtonImg.src = '/Icons/volume.png'; // Change image source to volume icon
         document.querySelector('.js-tooltip').innerHTML = 'Mute';
+        music.volume = 0.2;
     }
 }
-
 
 document.getElementById("volumeSlider").addEventListener("input", function() {
     var volume = this.value;
     this.style.background = 'linear-gradient(to right, #FFFFFF 0%, #FFFFFF ' + volume + '%, #d3d3d3 ' + volume + '%, #d3d3d3 100%)';
-    // document.querySelector(".volume-value").textContent = volume; // Update volume value display
-    // adjustVolume(volume);
+    adjustVolume(volume);
 });
 
 
-// function adjustVolume(volume) {
-//     // Implement logic to adjust volume in your application
-//     console.log("Volume adjusted to: " + volume);
-// }
 
-
-
-
+// Forth : renders the object elements into the spotify-body
 // For Audio
-const music = new Audio('Audio Files/Arcade.mp3');
+const music = new Audio('Audio Files/1.mp3');
 // music.play();
 const songs = [
     {
         id: '1',
-        songName: `<p class="t1">Red Right Hand</p>
-        <p class="sing-name">Nick Cave & The Bad Seeds, Flood</p>`,
+        songName: `<p class="song-name">Red Right Hand</p>
+        <p class="singer-name">Nick Cave & The Bad Seeds, Flood</p>`,
         template: 'Songs-Template/1.png',
         songTime: '6:21',
     },
     {
         id: '2',
-        songName: `<p class="t1">Arcade</p>
-        <p class="sing-name">Duncan Laurence</p>`,
+        songName: `<p class="song-name">Arcade</p>
+        <p class="singer-name">Duncan Laurence</p>`,
         template: 'Songs-Template/2.png',
         songTime: '3:04',
     },
     {
         id: '3',
-        songName: `<p class="t1">At My Worst (feat. Kehlani)</p>
-        <p class="sing-name">Pink Sweat$, Kehlani</p>`,
+        songName: `<p class="song-name">At My Worst (feat. Kehlani)</p>
+        <p class="singer-name">Pink Sweat$, Kehlani</p>`,
         template: 'Songs-Template/3.png',
         songTime: '2:49',
     },
     {
         id: '4',
-        songName: `<p class="t1">Happier</p>
-        <p class="sing-name">Marshmello, Bastille</p>`,
+        songName: `<p class="song-name">Happier</p>
+        <p class="singer-name">Marshmello, Bastille</p>`,
         template: 'Songs-Template/4.png',
         songTime: '3:34',
     },
     {
         id: '5',
-        songName: `<p class="t1">I Don't Care (with Justin Beiber)</p>
-        <p class="sing-name">Ed Sheeran & Justin Bieber</p>`,
+        songName: `<p class="song-name">I Don't Care (with Justin Beiber)</p>
+        <p class="singer-name">Ed Sheeran & Justin Bieber</p>`,
         template: '/Songs-Template/5.png',
         songTime: '3:40',
     },
     {
         id: '6',
-        songName: `<p class="t1">I'm an Albatraoz</p>
-        <p class="sing-name">AronChupa, Little Sis Nora</p>`,
+        songName: `<p class="song-name">I'm an Albatraoz</p>
+        <p class="singer-name">AronChupa, Little Sis Nora</p>`,
         template: '/Songs-Template/6.png',
         songTime: '2:47',
     },
     {
         id: '7',
-        songName: `<p class="t1">MONTERO (Call me by your name)</p>
-        <p class="sing-name">Lil Nas X</p>`,
+        songName: `<p class="song-name">MONTERO (Call me by your name)</p>
+        <p class="singer-name">Lil Nas X</p>`,
         template: '/Songs-Template/7.png',
         songTime: '2:18',
     },
     {
         id: '8',
-        songName: `<p class="t1">Old Town Road</p>
-        <p class="sing-name">Lil Nas X</p>`,
+        songName: `<p class="song-name">Old Town Road</p>
+        <p class="singer-name">Lil Nas X</p>`,
         template: '/Songs-Template/8.png',
         songTime: '1:53',
     },
     {
         id: '9',
-        songName: `<p class="t1">This Is what You Came For</p>
-        <p class="sing-name">Calvin Harris, Rihanna</p>`,
+        songName: `<p class="song-name">This Is what You Came For</p>
+        <p class="singer-name">Calvin Harris, Rihanna</p>`,
         template: '/Songs-Template/9.png',
         songTime: '3:42',
     },
     {
         id: '10',
-        songName: `<p class="t1">Treat You Better</p>
-        <p class="sing-name">Shawn Mendes</p>`,
+        songName: `<p class="song-name">Treat You Better</p>
+        <p class="singer-name">Shawn Mendes</p>`,
         template: '/Songs-Template/10.png',
         songTime: '3:08',
     }
@@ -175,18 +164,19 @@ const songs = [
 
 Array.from(document.getElementsByClassName('new-songs-grid')).forEach((e, i) => {
     e.getElementsByTagName('img')[0].src = songs[i].template;
-    e.getElementsByClassName('song-info')[0].innerHTML = songs[i].songName;
+    // e.getElementsByClassName('song-info')[0].innerHTML = songs[i].songName;
 });
 
 
 
+// Fifth : Plays the song when i click on play button
 // To play the song when click on the button
 let masterPlay = document.getElementById('masterPlay');
 
 masterPlay.addEventListener('click', ()=> {
     if (music.paused || music.currentTime <= 0){
         music.play();
-
+        music.volume = 0.2; // Default volume of the song
     } else {
         music.pause();
     }
@@ -194,42 +184,91 @@ masterPlay.addEventListener('click', ()=> {
 
 
 
+// Sixth : Renders the audio to play, song-template on the play-song section
 let index = 0;
 let template_play = document.querySelector('.template-section img');
 let title_play = document.querySelector('.name');
+let songtime = document.querySelector('.player-section .last');
+// let playsbutton = document.querySelector('');
 // let background_change = document.querySelector('.songs-grid');
 
+// when i click on template of song or song-img => that song will play.
 Array.from(document.getElementsByClassName('song-img')).forEach((e)=>{
     e.addEventListener('click', (el)=> {
         index = el.target.id;
-        // console.log(index);
         music.src = `Audio Files/${index}.mp3`;
         template_play.src = `Songs-template/${index}.png`;
+
         togglePlayPause();
+        music.volume = 0.2;
         music.play();
 
         let songTitles = songs.filter((ele) => {
             return ele.id == index;
         });
 
+        // It takes the song-time and puts into the player-section
+        songTitles.forEach(element => {
+            let { songTime } = element;
+            songtime.textContent = songTime;
+        })
+
+        // For the song-name and singer-name
         songTitles.forEach(elem => {
             let { songName } = elem;
-            // title_play.innerHTML = songName;
-            // template_play.src = template;
+            // gets the songName from the object songs and put it into the play-song's song-name
+            title_play.innerHTML = songName;
+            template_play.src = template;
         });
-
-    // Array.from(document.querySelector('.song-info p'))[index].style.color = 'green';
-
+        
     })
 });
 
 
 
+// Seventh : play / pause by using spacebar
+// control the song-play-pause by spacebar
+document.addEventListener('keydown', (event)=>{
+    if (event.key == "Spacebar" && music.paused){
+        music.play();
+    } else if (event.key == "Spacebar") {
+        music.play();
+    }
+});
 
 
 
+// Eight : to play the next-song when current song ends
+// For next-song or when all song ends
+let start_song_time = document.querySelector('.player-section .start'); 
+// Function to play the next song
+function playNextSong() {
+    index++; // to play the next song
+    if (index <= songs.length) {
+        let nextSong = songs[index];
+        music.src = `Audio Files/${nextSong.id}.mp3`;
+        template_play.src = `Songs-template/${nextSong.id}.png`;
+        title_play.innerHTML = nextSong.songName;
 
+        songtime.textContent = nextSong.songTime;
+        music.play(); // Play the next song
+    }
 
+    // When all songs ended
+    else {
+        index = 0;
+        let nextSong = songs[index];
+        music.src = `Audio Files/${nextSong.id}.mp3`;
+        template_play.src = `Songs-template/${nextSong.id}.png`;
+        title_play.innerHTML = nextSong.songName;
+        songtime.textContent = nextSong.songTime;
+        music.play(); // Play the first song
+    }
+}
+// Listen for the 'ended' event on the Audio object
+music.addEventListener('ended', function() {
+    playNextSong(); // Call the function to play the next song
+});
 
 
 
