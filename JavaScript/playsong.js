@@ -221,6 +221,7 @@ Array.from(document.getElementsByClassName('song-img')).forEach((e) => {
             title_play.innerHTML = songName;
             template_play.src = template;
         });
+        
 
     })
 });
