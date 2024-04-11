@@ -1,3 +1,5 @@
+// For Future extension of project...
+
 /*
 // ScrollWord
 window.addEventListener("scroll", ()=>{

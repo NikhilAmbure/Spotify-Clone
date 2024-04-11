@@ -49,7 +49,7 @@ function togglePlayPause() {
 
 // Adjusts the music-volume
 function adjustVolume(volume) {
-    music.volume = volume/100;
+    music.volume = volume / 100;
 }
 
 
@@ -77,7 +77,7 @@ function toggleMute() {
     }
 }
 
-document.getElementById("volumeSlider").addEventListener("input", function() {
+document.getElementById("volumeSlider").addEventListener("input", function () {
     var volume = this.value;
     this.style.background = 'linear-gradient(to right, #FFFFFF 0%, #FFFFFF ' + volume + '%, #d3d3d3 ' + volume + '%, #d3d3d3 100%)';
     adjustVolume(volume);
@@ -173,8 +173,8 @@ Array.from(document.getElementsByClassName('new-songs-grid')).forEach((e, i) => 
 // To play the song when click on the button
 let masterPlay = document.getElementById('masterPlay');
 
-masterPlay.addEventListener('click', ()=> {
-    if (music.paused || music.currentTime <= 0){
+masterPlay.addEventListener('click', () => {
+    if (music.paused || music.currentTime <= 0) {
         music.play();
         music.volume = 0.2; // Default volume of the song
     } else {
@@ -193,8 +193,8 @@ let songtime = document.querySelector('.player-section .last');
 // let background_change = document.querySelector('.songs-grid');
 
 // when i click on template of song or song-img => that song will play.
-Array.from(document.getElementsByClassName('song-img')).forEach((e)=>{
-    e.addEventListener('click', (el)=> {
+Array.from(document.getElementsByClassName('song-img')).forEach((e) => {
+    e.addEventListener('click', (el) => {
         index = el.target.id;
         music.src = `Audio Files/${index}.mp3`;
         template_play.src = `Songs-template/${index}.png`;
@@ -220,7 +220,7 @@ Array.from(document.getElementsByClassName('song-img')).forEach((e)=>{
             title_play.innerHTML = songName;
             template_play.src = template;
         });
-        
+
     })
 });
 
@@ -228,8 +228,8 @@ Array.from(document.getElementsByClassName('song-img')).forEach((e)=>{
 
 // Seventh : play / pause by using spacebar
 // control the song-play-pause by spacebar
-document.addEventListener('keydown', (event)=>{
-    if (event.key == "Spacebar" && music.paused){
+document.addEventListener('keydown', (event) => {
+    if (event.key == "Spacebar" && music.paused) {
         music.play();
     } else if (event.key == "Spacebar") {
         music.play();
@@ -240,7 +240,7 @@ document.addEventListener('keydown', (event)=>{
 
 // Eight : to play the next-song when current song ends
 // For next-song or when all song ends
-let start_song_time = document.querySelector('.player-section .start'); 
+let start_song_time = document.querySelector('.player-section .start');
 // Function to play the next song
 function playNextSong() {
     index++; // to play the next song
@@ -266,10 +266,73 @@ function playNextSong() {
     }
 }
 // Listen for the 'ended' event on the Audio object
-music.addEventListener('ended', function() {
+music.addEventListener('ended', function () {
     playNextSong(); // Call the function to play the next song
 });
 
 
+// Nine : next-song and prev-song
+// For next-audio play when i click on next-button
+let next_index = 1;
 
+Array.from(document.getElementsByClassName('next-img')).forEach((n) => {
+    n.addEventListener('click', (n) => {
+        next_index += 1
+        music.src = `Audio Files/${next_index}.mp3`;
+        template_play.src = `Songs-template/${next_index}.png`;
 
+        togglePlayPause();
+        music.volume = 0.2;
+        music.play();
+
+        let songTitles = songs.filter((ele) => {
+            return ele.id == next_index;
+        });
+
+        // It takes the song-time and puts into the player-section
+        songTitles.forEach(element => {
+            let { songTime } = element;
+            songtime.textContent = songTime;
+        })
+
+        // For the song-name and singer-name
+        songTitles.forEach(elem => {
+            let { songName } = elem;
+            // gets the songName from the object songs and put it into the play-song's song-name
+            title_play.innerHTML = songName;
+            template_play.src = template;
+        });
+    });
+});
+
+// For prev-song
+Array.from(document.getElementsByClassName('prev-img')).forEach((b)=>{
+    b.addEventListener('click', (b)=> {
+        next_index -= 1;
+        if (next_index <= 0) {
+            next_index = 1;
+        } else {
+            music.src = `Audio Files/${next_index}.mp3`;
+            template_play.src =  `Songs-template/${next_index}.png`;
+
+            togglePlayPause();
+            music.volume = 0.2;
+            music.play();
+
+            let songTitles = songs.filter((ele)=>{
+                return ele.id == next_index;
+            });
+
+            songTitles.forEach(element=>{
+                let { songTime } = element;
+                songtime.textContent = songTime;
+            })
+
+            songTitles.forEach(element=>{
+                let { songName } = element;
+                title_play.innerHTML = songName;
+                template_play.src = template;
+            });
+        }
+    });
+});
