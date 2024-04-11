@@ -180,8 +180,11 @@
 @media only screen and (max-width: 1000px){
 
     .spotify-flex {
-        margin-left: 155px;
+        margin-left: 300px;
     }
+
+
+
 }
 
 
@@ -531,4 +534,29 @@
 .play-tooltip:hover .play-tooltiptext {
     visibility: visible;
     opacity: 1;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    
+    .sing-name {
+        margin-top: -12px;
+    }
+
+    .t1{
+        margin-top: -7px;
+    }
+
+    .song-img {
+        margin-top: -35px;
+    }
+
+    .song-number {
+        margin-top: -40px;
+    }
+
+    .song-album {
+        margin-top: -40px;
+    }
+    
 }

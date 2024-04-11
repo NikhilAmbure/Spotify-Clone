@@ -86,14 +86,18 @@
 @media only screen and (max-width: 1000px) {
 
     .template-section {
-        width: 100%;
+        width: 200px;
+    }
+
+    .liked {
+        margin-left: -90px;
     }
     .name {
         display: none;
     }
 
     .singer-name {
-        display: none;
+        width: 170px;
     }
 
     .song-template {
@@ -369,15 +373,42 @@
 
 @media only screen and (max-width: 800px) {
 
+    .player-section{
+        margin-left: 40px;
+    }
+
     .slider {
         display: none;
     }
 
     .mute-button {
-        margin-left: 10px;
+        margin-left: 50px;
     }
 
     .volume-section span {
         display: none;
+    }
+
+    .queue-button {
+        display: none;
+    }
+
+    .connect-button {
+        display: none;
+    }
+
+    .mic-button {
+        display: none;
+    }
+
+    .start {
+        margin-left: 0px;
+        margin-right: 210px;
+    }
+
+    .end {
+        margin-right: 0px;
+        margin-left: 225px;
+        margin-top: 4px;
     }
 }
