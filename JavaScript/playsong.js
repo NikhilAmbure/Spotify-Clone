@@ -195,6 +195,7 @@ let songtime = document.querySelector('.player-section .last');
 // when i click on template of song or song-img => that song will play.
 Array.from(document.getElementsByClassName('song-img')).forEach((e) => {
     e.addEventListener('click', (el) => {
+        resetProgressBar();
         index = el.target.id;
         music.src = `Audio Files/${index}.mp3`;
         template_play.src = `Songs-template/${index}.png`;
@@ -243,6 +244,7 @@ document.addEventListener('keydown', (event) => {
 let start_song_time = document.querySelector('.player-section .start');
 // Function to play the next song
 function playNextSong() {
+    resetProgressBar();
     index++; // to play the next song
     if (index <= songs.length) {
         let nextSong = songs[index];
@@ -277,6 +279,7 @@ let next_index = 1;
 
 Array.from(document.getElementsByClassName('next-img')).forEach((n) => {
     n.addEventListener('click', (n) => {
+        resetProgressBar();
         next_index += 1
         music.src = `Audio Files/${next_index}.mp3`;
         template_play.src = `Songs-template/${next_index}.png`;
@@ -308,6 +311,7 @@ Array.from(document.getElementsByClassName('next-img')).forEach((n) => {
 // For prev-song
 Array.from(document.getElementsByClassName('prev-img')).forEach((b)=>{
     b.addEventListener('click', (b)=> {
+        resetProgressBar();
         next_index -= 1;
         if (next_index <= 0) {
             next_index = 1;
@@ -336,3 +340,12 @@ Array.from(document.getElementsByClassName('prev-img')).forEach((b)=>{
         }
     });
 });
+
+
+// Tenth
+// Function to reset the progress bar
+function resetProgressBar() {
+    clearInterval(intervalId); // Clear the interval for song progress updates
+    currentTime = 0; // Reset current time
+    updateProgressBar(); // Update progress bar
+}
