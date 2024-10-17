@@ -34,7 +34,7 @@ function togglePlayPause() {
     if (isPlaying) {
         clearInterval(intervalId); // Stop the interval for song progress updates
         isPlaying = false; // Update flag to indicate song is paused
-        playPauseImg.src = '/Icons/new-play.png'; // Change src to play icon
+        // playPauseImg.src = '/Icons/new-play.png'; // Change src to play icon
         // music.pause();
     } else {
         intervalId = setInterval(function () {
@@ -44,6 +44,18 @@ function togglePlayPause() {
         isPlaying = true; // Update flag to indicate song is playing
         playPauseImg.src = '/Icons/pause.png'; // Change src to pause icon
         // music.play();
+    }
+}
+
+let count = 0;
+function pause(){
+    let playPauseButton = document.querySelector('.play-pause-button');
+    if (count%2===1){
+        playPauseButton.img = '/Icons/new-play.png';
+        count++;
+    }else{
+        playPauseButton.img = '/Icons/pause.png';
+        count++;
     }
 }
 
@@ -285,7 +297,7 @@ Array.from(document.getElementsByClassName('next-img')).forEach((n) => {
         music.src = `Audio Files/${next_index}.mp3`;
         template_play.src = `Songs-template/${next_index}.png`;
 
-        togglePlayPause();
+        // togglePlayPause();
         music.volume = 0.2;
         music.play();
 
